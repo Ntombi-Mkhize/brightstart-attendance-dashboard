@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A simple early childhood centre attendance dashboard by Ntombi Mkhize." />
+  <title>BrightStart | Attendance Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">ECD ADMIN TOOL</p>
+      <h1>BrightStart</h1>
+    </div>
+    <button id="themeButton" aria-label="Switch colour theme">Dark mode</button>
+  </header>
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">DAILY ATTENDANCE</p>
+        <h2>Welcome back, Ntombi.</h2>
+        <p>Keep a clear, caring record of who is present today.</p>
+      </div>
+      <div class="date-card"><span>Today</span><strong id="todayDate"></strong></div>
+    </section>
+    <section class="stats" aria-label="Attendance summary">
+      <article><span>Children enrolled</span><strong id="totalChildren">6</strong></article>
+      <article><span>Present today</span><strong id="presentCount">4</strong></article>
+      <article><span>Attendance rate</span><strong id="attendanceRate">67%</strong></article>
+    </section>
+    <section class="panel">
+      <div class="panel-heading">
+        <div><p class="eyebrow">CLASS REGISTER</p><h2>Sunshine Class</h2></div>
+        <label class="search"><span>Search</span><input id="searchInput" type="search" placeholder="Find a child" /></label>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Child</th><th>Parent contact</th><th>Status</th></tr></thead>
+        <tbody id="attendanceList">
+          <tr data-name="Anele Dlamini"><td><strong>Anele Dlamini</strong><small>Age 4</small></td><td>Sample contact</td><td><button class="status present">Present</button></td></tr>
+          <tr data-name="Amahle Ndlovu"><td><strong>Amahle Ndlovu</strong><small>Age 5</small></td><td>Sample contact</td><td><button class="status present">Present</button></td></tr>
+          <tr data-name="Lethabo Molefe"><td><strong>Lethabo Molefe</strong><small>Age 4</small></td><td>Sample contact</td><td><button class="status absent">Absent</button></td></tr>
+          <tr data-name="Sibusiso Khumalo"><td><strong>Sibusiso Khumalo</strong><small>Age 5</small></td><td>Sample contact</td><td><button class="status present">Present</button></td></tr>
+          <tr data-name="Zinhle Maseko"><td><strong>Zinhle Maseko</strong><small>Age 3</small></td><td>Sample contact</td><td><button class="status absent">Absent</button></td></tr>
+          <tr data-name="Thando Nkosi"><td><strong>Thando Nkosi</strong><small>Age 4</small></td><td>Sample contact</td><td><button class="status present">Present</button></td></tr>
+        </tbody>
+      </table></div>
+      <p class="hint">Click a status to change it. This demonstration uses fictional sample information only.</p>
+    </section>
+  </main>
+  <footer>Designed and built by Ntombi Mkhize • SheCodes student project</footer>
+  <script src="script.js"></script>
+</body>
+</html>
