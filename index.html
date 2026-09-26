@@ -3,52 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A simple early childhood centre attendance dashboard by Ntombi Mkhize." />
+  <meta name="description" content="A welcoming early childhood centre attendance dashboard by Ntombi Mkhize." />
   <title>BrightStart | Attendance Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#register">Skip to attendance register</a>
   <header class="topbar">
-    <div>
-      <p class="eyebrow">ECD ADMIN TOOL</p>
-      <h1>BrightStart</h1>
+    <a class="brand" href="#top" aria-label="BrightStart home">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span><small>ECD ADMIN TOOL</small><strong>BrightStart</strong></span>
+    </a>
+    <div class="top-actions">
+      <span class="live-dot"><i></i> Live register</span>
+      <button id="themeButton" class="theme-button" aria-label="Switch colour theme"><span aria-hidden="true">☾</span><span>Dark mode</span></button>
     </div>
-    <button id="themeButton" aria-label="Switch colour theme">Dark mode</button>
   </header>
-  <main>
-    <section class="hero">
-      <div>
-        <p class="eyebrow">DAILY ATTENDANCE</p>
-        <h2>Welcome back, Ntombi.</h2>
-        <p>Keep a clear, caring record of who is present today.</p>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="welcome-title">
+      <div class="hero-copy">
+        <p class="eyebrow">DAILY ATTENDANCE <span>•</span> SUNSHINE CLASS</p>
+        <h1 id="welcome-title">Good morning, Ntombi.</h1>
+        <p class="hero-text">A clear, caring view of today's class — everything you need to take attendance with confidence.</p>
+        <a class="hero-action" href="#register">Open class register <span aria-hidden="true">→</span></a>
       </div>
-      <div class="date-card"><span>Today</span><strong id="todayDate"></strong></div>
+      <div class="date-card">
+        <span class="calendar-icon" aria-hidden="true">◷</span>
+        <div><span>Today</span><strong id="todayDate"></strong></div>
+      </div>
+      <div class="sun-shape" aria-hidden="true"></div>
     </section>
+
     <section class="stats" aria-label="Attendance summary">
-      <article><span>Children enrolled</span><strong id="totalChildren">6</strong></article>
-      <article><span>Present today</span><strong id="presentCount">4</strong></article>
-      <article><span>Attendance rate</span><strong id="attendanceRate">67%</strong></article>
+      <article class="stat-card total-card"><span class="stat-icon" aria-hidden="true">♙</span><div><span>Children enrolled</span><strong id="totalChildren">6</strong><small>Sunshine Class</small></div></article>
+      <article class="stat-card present-card"><span class="stat-icon" aria-hidden="true">✓</span><div><span>Present today</span><strong id="presentCount">4</strong><small id="presentNote">Ready to learn</small></div></article>
+      <article class="stat-card rate-card"><span class="stat-icon" aria-hidden="true">↗</span><div><span>Attendance rate</span><strong id="attendanceRate">67%</strong><small id="rateNote">Today so far</small></div></article>
     </section>
-    <section class="panel">
+
+    <section id="register" class="panel" aria-labelledby="register-title">
       <div class="panel-heading">
-        <div><p class="eyebrow">CLASS REGISTER</p><h2>Sunshine Class</h2></div>
-        <label class="search"><span>Search</span><input id="searchInput" type="search" placeholder="Find a child" /></label>
+        <div>
+          <p class="eyebrow">CLASS REGISTER</p>
+          <h2 id="register-title">Sunshine Class <span>•</span> <small>6 children</small></h2>
+        </div>
+        <label class="search"><span class="search-icon" aria-hidden="true">⌕</span><span class="visually-hidden">Search children</span><input id="searchInput" type="search" placeholder="Search a child" /></label>
       </div>
-      <div class="table-wrap"><table>
-        <thead><tr><th>Child</th><th>Parent contact</th><th>Status</th></tr></thead>
-        <tbody id="attendanceList">
-          <tr data-name="Anele Dlamini"><td><strong>Anele Dlamini</strong><small>Age 4</small></td><td>Sample contact</td><td><button class="status present">Present</button></td></tr>
-          <tr data-name="Amahle Ndlovu"><td><strong>Amahle Ndlovu</strong><small>Age 5</small></td><td>Sample contact</td><td><button class="status present">Present</button></td></tr>
-          <tr data-name="Lethabo Molefe"><td><strong>Lethabo Molefe</strong><small>Age 4</small></td><td>Sample contact</td><td><button class="status absent">Absent</button></td></tr>
-          <tr data-name="Sibusiso Khumalo"><td><strong>Sibusiso Khumalo</strong><small>Age 5</small></td><td>Sample contact</td><td><button class="status present">Present</button></td></tr>
-          <tr data-name="Zinhle Maseko"><td><strong>Zinhle Maseko</strong><small>Age 3</small></td><td>Sample contact</td><td><button class="status absent">Absent</button></td></tr>
-          <tr data-name="Thando Nkosi"><td><strong>Thando Nkosi</strong><small>Age 4</small></td><td>Sample contact</td><td><button class="status present">Present</button></td></tr>
-        </tbody>
-      </table></div>
-      <p class="hint">Click a status to change it. This demonstration uses fictional sample information only.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Child</th><th scope="col">Parent contact</th><th scope="col">Status</th></tr></thead>
+          <tbody id="attendanceList">
+            <tr data-name="Anele Dlamini"><td><div class="child"><span class="avatar avatar-lilac">AD</span><span><strong>Anele Dlamini</strong><small>Age 4</small></span></div></td><td><span class="sample-contact">Sample contact</span></td><td><button class="status present" aria-pressed="true"><span>✓</span> Present</button></td></tr>
+            <tr data-name="Amahle Ndlovu"><td><div class="child"><span class="avatar avatar-peach">AN</span><span><strong>Amahle Ndlovu</strong><small>Age 5</small></span></div></td><td><span class="sample-contact">Sample contact</span></td><td><button class="status present" aria-pressed="true"><span>✓</span> Present</button></td></tr>
+            <tr data-name="Lethabo Molefe"><td><div class="child"><span class="avatar avatar-blue">LM</span><span><strong>Lethabo Molefe</strong><small>Age 4</small></span></div></td><td><span class="sample-contact">Sample contact</span></td><td><button class="status absent" aria-pressed="false"><span>–</span> Absent</button></td></tr>
+            <tr data-name="Sibusiso Khumalo"><td><div class="child"><span class="avatar avatar-gold">SK</span><span><strong>Sibusiso Khumalo</strong><small>Age 5</small></span></div></td><td><span class="sample-contact">Sample contact</span></td><td><button class="status present" aria-pressed="true"><span>✓</span> Present</button></td></tr>
+            <tr data-name="Zinhle Maseko"><td><div class="child"><span class="avatar avatar-mint">ZM</span><span><strong>Zinhle Maseko</strong><small>Age 3</small></span></div></td><td><span class="sample-contact">Sample contact</span></td><td><button class="status absent" aria-pressed="false"><span>–</span> Absent</button></td></tr>
+            <tr data-name="Thando Nkosi"><td><div class="child"><span class="avatar avatar-rose">TN</span><span><strong>Thando Nkosi</strong><small>Age 4</small></span></div></td><td><span class="sample-contact">Sample contact</span></td><td><button class="status present" aria-pressed="true"><span>✓</span> Present</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="panel-footer"><p><span aria-hidden="true">ⓘ</span> Tap a status to update attendance. This demo uses fictional sample information only.</p><span id="searchResult" aria-live="polite"></span></div>
     </section>
   </main>
-  <footer>Designed and built by Ntombi Mkhize • SheCodes student project</footer>
+  <footer><span class="footer-mark" aria-hidden="true">✦</span> Designed and built by <strong>Ntombi Mkhize</strong> <span>•</span> SheCodes student project</footer>
   <script src="script.js"></script>
 </body>
 </html>
