@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="stylesheet" href="app.css" />
 </head>
 <body>
   <a class="skip-link" href="#register">Skip to attendance register</a>
@@ -22,6 +22,8 @@
       <button id="themeButton" class="theme-button" aria-label="Switch colour theme"><span aria-hidden="true">☾</span><span>Dark mode</span></button>
     </div>
   </header>
+
+
 
 
   <main id="top">
@@ -40,11 +42,15 @@
     </section>
 
 
+
+
     <section class="stats" aria-label="Attendance summary">
       <article class="stat-card total-card"><span class="stat-icon" aria-hidden="true">♙</span><div><span>Children enrolled</span><strong id="totalChildren">6</strong><small>Sunshine Class</small></div></article>
       <article class="stat-card present-card"><span class="stat-icon" aria-hidden="true">✓</span><div><span>Present today</span><strong id="presentCount">4</strong><small id="presentNote">Ready to learn</small></div></article>
       <article class="stat-card rate-card"><span class="stat-icon" aria-hidden="true">↗</span><div><span>Attendance rate</span><strong id="attendanceRate">67%</strong><small id="rateNote">Today so far</small></div></article>
     </section>
+
+
 
 
     <section id="register" class="panel" aria-labelledby="register-title">
@@ -75,4 +81,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
 
